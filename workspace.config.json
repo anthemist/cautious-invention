@@ -1,0 +1,65 @@
+{
+  "$schema": "https://cedar.studio/schema/workspace-config.json",
+  "version": "1.0.0",
+  "workspace": {
+    "name": "Cedar Policy Workspace",
+    "description": "Automatically initialized by Cedar Designer",
+    "type": "cedar-policy"
+  },
+  "cedar": {
+    "version": "3.0",
+    "schemaPath": "cedar/schema/main.cedarschema",
+    "policiesPath": "cedar/policies/",
+    "templatesPath": "cedar/templates/",
+    "examplesPath": "cedar/examples/"
+  },
+  "validation": {
+    "enabled": true,
+    "onSave": true,
+    "onCommit": true,
+    "strictMode": false
+  },
+  "formatting": {
+    "enabled": true,
+    "indentSize": 2,
+    "formatOnSave": true
+  },
+  "linting": {
+    "enabled": true,
+    "rules": {
+      "requireComments": "warn",
+      "forbidWildcards": "error",
+      "enforceNamingConvention": "warn",
+      "detectUnusedPolicies": "info"
+    }
+  },
+  "testing": {
+    "testsPath": "cedar/tests/",
+    "runOnCommit": true,
+    "coverage": {
+      "enabled": false,
+      "threshold": 80
+    }
+  },
+  "integrations": {
+    "github": {
+      "enabled": true,
+      "cicd": false
+    },
+    "vscode": {
+      "enabled": true,
+      "extensions": ["cedar-language-server", "cedar-policy-validator"]
+    }
+  },
+  "ui": {
+    "theme": "default",
+    "showExamples": true,
+    "showTemplates": true,
+    "enableIntelliSense": true
+  },
+  "metadata": {
+    "initializedBy": "Cedar Designer API",
+    "initializedAt": "auto-generated",
+    "version": "1.0.0"
+  }
+}

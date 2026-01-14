@@ -1,0 +1,131 @@
+[
+  {
+    "uid": { "type": "CedarDesigner::User", "id": "alice" },
+    "attrs": {
+      "email": "alice@example.com",
+      "department": "Engineering",
+      "role": "admin",
+      "permissions": ["read", "write", "delete", "manage"]
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::User", "id": "bob" },
+    "attrs": {
+      "email": "bob@example.com",
+      "department": "Sales",
+      "role": "manager",
+      "permissions": ["read", "write"]
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::User", "id": "carol" },
+    "attrs": {
+      "email": "carol@example.com",
+      "department": "Human Resources",
+      "role": "employee",
+      "permissions": ["read", "manage"]
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::User", "id": "dave" },
+    "attrs": {
+      "email": "dave@example.com",
+      "department": "Engineering",
+      "role": "employee",
+      "permissions": ["read"]
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::Group", "id": "engineering-team" },
+    "attrs": {
+      "name": "Engineering Team",
+      "members": [
+        { "__entity": { "type": "CedarDesigner::User", "id": "alice" } },
+        { "__entity": { "type": "CedarDesigner::User", "id": "dave" } }
+      ]
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::Group", "id": "sales-team" },
+    "attrs": {
+      "name": "Sales Team",
+      "members": [
+        { "__entity": { "type": "CedarDesigner::User", "id": "bob" } }
+      ]
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::Group", "id": "hr-team" },
+    "attrs": {
+      "name": "Human Resources Team",
+      "members": [
+        { "__entity": { "type": "CedarDesigner::User", "id": "carol" } }
+      ]
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::Group", "id": "admins" },
+    "attrs": {
+      "name": "Administrators",
+      "members": [
+        { "__entity": { "type": "CedarDesigner::User", "id": "alice" } }
+      ]
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::Document", "id": "quarterly-report" },
+    "attrs": {
+      "owner": { "__entity": { "type": "CedarDesigner::User", "id": "bob" } },
+      "confidentiality": "internal",
+      "createdAt": "2024-01-15",
+      "tags": ["finance", "quarterly"]
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::Document", "id": "employee-handbook" },
+    "attrs": {
+      "owner": { "__entity": { "type": "CedarDesigner::User", "id": "carol" } },
+      "confidentiality": "public",
+      "createdAt": "2024-01-01",
+      "tags": ["hr", "policy", "handbook"]
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::Document", "id": "api-documentation" },
+    "attrs": {
+      "owner": { "__entity": { "type": "CedarDesigner::User", "id": "alice" } },
+      "confidentiality": "public",
+      "createdAt": "2024-02-01",
+      "tags": ["engineering", "api", "documentation"]
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::Resource", "id": "server-config" },
+    "attrs": {
+      "owner": { "__entity": { "type": "CedarDesigner::User", "id": "alice" } },
+      "type": "system",
+      "accessLevel": "restricted"
+    },
+    "parents": []
+  },
+  {
+    "uid": { "type": "CedarDesigner::Resource", "id": "dashboard" },
+    "attrs": {
+      "owner": { "__entity": { "type": "CedarDesigner::User", "id": "bob" } },
+      "type": "application",
+      "accessLevel": "standard"
+    },
+    "parents": []
+  }
+]

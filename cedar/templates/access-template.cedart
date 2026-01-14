@@ -1,0 +1,43 @@
+// Access Control Template
+// Reusable template for role-based access control
+
+// Template for role-based access
+// Usage: Create policies by filling in the placeholders
+permit(
+  principal,
+  action == ?action,
+  resource is ?resourceType
+)
+when {
+  principal.role in ?allowedRoles
+};
+
+// Template for department-based access
+permit(
+  principal,
+  action == ?action,
+  resource is ?resourceType
+)
+when {
+  principal.department == resource.?departmentField
+};
+
+// Template for owner-based access
+permit(
+  principal,
+  action in ?actions,
+  resource
+)
+when {
+  resource.owner == principal
+};
+
+// Template for permission-based access
+permit(
+  principal,
+  action == ?action,
+  resource
+)
+when {
+  ?requiredPermission in principal.permissions
+};
